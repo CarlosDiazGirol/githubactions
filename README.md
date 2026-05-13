@@ -73,3 +73,5 @@ Ejecuta un comando de terminal.
 ## Frase para explicarlo en clase
 
 > GitHub Actions levanta una máquina temporal en la nube, descarga o prepara el entorno que le digamos, y ejecuta comandos como si estuviéramos en una terminal. En este primer ejemplo solo imprime un mensaje, pero después haremos que instale dependencias, pase tests, revise el linter y compruebe el build.
+
+NUEVO
