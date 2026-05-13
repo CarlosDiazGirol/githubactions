@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +19,9 @@ jobs:
 
       - name: Instalar dependencias
         run: npm install
+
+      - name: Ejecutar linter
+        run: npm run lint
 
       - name: Ejecutar tests
         run: npm test

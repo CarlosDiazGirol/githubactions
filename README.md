@@ -1,18 +1,75 @@
-# React + Vite
+Pega esto como primer workflow sencillo en GitHub Actions.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nombre recomendado del archivo:
 
-Currently, two official plugins are available:
+```txt
+.github/workflows/first-action.yml
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Contenido:
 
-## React Compiler
+```yml
+name: Primera Action
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+on:
+  push:
+    branches: [main]
 
-Note: This will impact Vite dev & build performances.
+jobs:
+  hola:
+    runs-on: ubuntu-latest
 
-## Expanding the ESLint configuration
+    steps:
+      - name: Mostrar mensaje
+        run: echo "Hola desde GitHub Actions"
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Qué estás enseñando aquí
+
+```yml
+name: Primera Action
+```
+
+Nombre del workflow que verán en la pestaña **Actions**.
+
+```yml
+on:
+  push:
+    branches: [main]
+```
+
+Cuándo se ejecuta. En este caso, cada vez que haya un `push` a la rama `main`.
+
+```yml
+jobs:
+```
+
+Lista de trabajos que se van a ejecutar.
+
+```yml
+hola:
+```
+
+Nombre interno del job.
+
+```yml
+runs-on: ubuntu-latest
+```
+
+GitHub levanta una máquina temporal con Ubuntu.
+
+```yml
+steps:
+```
+
+Pasos que ejecutará esa máquina.
+
+```yml
+run: echo "Hola desde GitHub Actions"
+```
+
+Ejecuta un comando de terminal.
+
+## Frase para explicarlo en clase
+
+> GitHub Actions levanta una máquina temporal en la nube, descarga o prepara el entorno que le digamos, y ejecuta comandos como si estuviéramos en una terminal. En este primer ejemplo solo imprime un mensaje, pero después haremos que instale dependencias, pase tests, revise el linter y compruebe el build.
