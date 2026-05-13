@@ -60,6 +60,39 @@ Archivo:
 .github/workflows/main.yml
 ```
 
+```yml
+name: Validar proyecto
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v6
+
+      - name: Instalar Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar linter
+        run: npm run lint
+
+      - name: Ejecutar tests
+        run: npm test
+
+      - name: Comprobar build
+        run: npm run build
+```
+
 Contenido:
 
 ```yml
