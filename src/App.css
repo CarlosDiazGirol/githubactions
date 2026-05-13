@@ -1,0 +1,105 @@
+.app-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.calculator-card {
+  width: min(100%, 420px);
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.calculator-card h1 {
+  margin: 0 0 24px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  color: var(--text-h);
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button-row button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.button-row button:hover {
+  background: var(--accent-strong);
+}
+
+.button-row button:focus-visible,
+.input-group input:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.result-panel {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--result-bg);
+}
+
+.result-text {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.error-message {
+  margin: 0;
+  color: var(--error);
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .calculator-card {
+    padding: 24px;
+  }
+
+  .button-row {
+    grid-template-columns: 1fr;
+  }
+}
