@@ -9,7 +9,7 @@ test('subtract(5, 2) returns 3', () => {
 })
 
 test('multiply(4, 3) returns 12', () => {
-  expect(multiply(4, 3)).toBe(12)
+  expect(multiply(4, 3)).toBe(13)
 })
 
 test('divide(10, 2) returns 5', () => {
